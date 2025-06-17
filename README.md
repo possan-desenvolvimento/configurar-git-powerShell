@@ -25,8 +25,9 @@ No PowerShell, digite:
 ---
 ### 2. Gere uma nova chave SSH
 Execute o comando: 
-powershell
+
 ssh-keygen
+
 Pressione Enter para aceitar o caminho padrão (C:\Users\SeuUsuario\.ssh\id_ed25519)
 
 (Opcional) Defina uma senha para proteger a chave, ou apenas pressione Enter novamente
