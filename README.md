@@ -18,8 +18,9 @@ Este guia tem como objetivo ensinar como configurar o Git para autenticação vi
 
 No PowerShell, digite:
 
-- git --version
-- Você deverá ver algo como:
+git --version
+
+Você deverá ver algo como:
 - git version 2.xx.x
 
 ---
@@ -36,39 +37,50 @@ Pressione Enter para aceitar o caminho padrão (C:\Users\SeuUsuario\.ssh\id_ed25
 
 ### 3. Ative e inicie o ssh-agent
 Abra o PowerShell como administrador e execute:
-powershell
+
 Set-Service ssh-agent -StartupType Automatic
+
+Depois:
+
 Start-Service ssh-agent
+
 Isso garante que o agente de autenticação SSH inicie automaticamente com o Windows.
 
 ---
 
 ### 4. Adicione sua chave privada ao ssh-agent
+
 Execute no PowerShell (normal, não administrador):
-powershell
+
 ssh-add $env:USERPROFILE\.ssh\id_ed25519
+
 Confirme que a chave foi adicionada com:
 
-powershell
 ssh-add -l
-5. Adicione sua chave pública ao GitHub
+
+---
+
+# 5. Adicione sua chave pública ao GitHub
 Abra o arquivo da chave pública:
 
-powershell
 notepad $env:USERPROFILE\.ssh\id_ed25519.pub
+
 Copie o conteúdo completo (começa com ssh-ed25519)
 
 ---
 
 # No GitHub, vá em:
 Settings → SSH and GPG keys → New SSH key
+
 Cole a chave, dê um nome (ex: Notebook-Pessoal) e clique em Add SSH key
 
 --- 
 
 ### 6. Teste sua conexão com o GitHub
 No PowerShell:
+
 ssh -T git@github.com
+
 Você deve ver uma mensagem como:
 
 Hi seu-usuario! You've successfully authenticated, but GitHub does not provide shell access.
@@ -76,14 +88,15 @@ Hi seu-usuario! You've successfully authenticated, but GitHub does not provide s
 --- 
 
 # 7. Configure seu nome e e-mail no Git
-powershell
+
 git config --global user.name "Seu Nome"
+
 git config --global user.email "seu@email.com"
 
 --- 
 
 # 8. Clone um repositório via SSH
-powershell
+
 git clone git@github.com:usuario/repositorio.git
 
 --- 
