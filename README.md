@@ -18,10 +18,9 @@ Este guia tem como objetivo ensinar como configurar o Git para autenticação vi
 
 No PowerShell, digite:
 
-powershell
-git --version
-Você deverá ver algo como:
-git version 2.xx.x
+- git --version
+- Você deverá ver algo como:
+- git version 2.xx.x
 
 ---
 ### 2. Gere uma nova chave SSH
