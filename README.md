@@ -1,2 +1,1 @@
-# configurar-git-powerShell
-Configurando o git através do PowerShell
+# Como configurar o Git com SSH no PowerShell (Windows)
